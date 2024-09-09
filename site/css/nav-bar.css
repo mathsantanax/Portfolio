@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --blue: #171D25;
+    --green: #65C244;
+    --red: #CA3535;
+    --blue-2: #1B2939;
+    --white: #D9D9D9;
+    --orange: #EB8F09;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vh;
+    font-family: 'KoHo';
+    font-weight: 500;
+    background-color: var(--blue);
+}
+
+/* the nav-bar */
+.nav-bar{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 6%;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.menu-elements{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.menu-elements ul{
+    margin: 0;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-elements li{
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    height: 3em;
+    cursor: pointer;
+}
+
+.menu-elements li:hover .page{
+    color: var(--red);
+}
+.menu-elements li:hover .section{
+    color: var(--green);
+}
+
+
+
+/* The switch - the box around the slider */
+.switchLightDarkMode{
+    position: relative;
+    float: right;
+    top: 15%;
+    right: 2%;
+}
+
+.switch 
+{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+    
+    /* Hide default HTML checkbox */
+.switch input 
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+    
+    /* The slider */
+.slider 
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1C557D;
+    transition: .4s;
+}
+    
+.slider:before 
+{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+    
+    /* Style for when the checkbox is checked */
+input:checked + .slider 
+{
+    background-color: #1B2939;
+}
+    
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+    
+    /* Rounded sliders */
+.slider.round 
+{
+    border-radius: 34px;
+}
+    
+.slider.round:before
+{
+    border-radius: 50%;
+}
