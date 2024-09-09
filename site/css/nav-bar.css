@@ -17,16 +17,21 @@ body{
     font-family: 'KoHo';
     font-weight: 500;
     background-color: var(--blue);
+    color: var(--white);
+}
+
+#github-icon img{
+    width: 4em;
+    background-color: grey;
 }
 
 /* the nav-bar */
 .nav-bar{
-    position: fixed;
+    position: fixed 0;
     display: flex;
     width: 100vw;
-    height: 6%;
+    height: 4em;
     background-color: var(--blue);
-    color: var(--white);
 }
 
 .menu-elements{
@@ -48,7 +53,7 @@ body{
     align-items: center;
     display: flex;
     text-decoration: none;
-    height: 3em;
+    height: 4em;
     cursor: pointer;
 }
 
