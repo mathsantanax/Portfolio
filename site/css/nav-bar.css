@@ -20,9 +20,8 @@ body{
     color: var(--white);
 }
 
-#github-icon img{
+#icons{
     width: 4em;
-    background-color: grey;
 }
 
 /* the nav-bar */
@@ -64,6 +63,30 @@ body{
     color: var(--green);
 }
 
+#home{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-dev h4{
+    margin: 0   ;
+}
+
+.name-dev h1{
+    font-size: 5vw;
+    margin: 0;
+}
+
+.social-media{
+    width: 20vw;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
 
 
 /* The switch - the box around the slider */
