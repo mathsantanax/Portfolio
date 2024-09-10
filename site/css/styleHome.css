@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/* cores do projeto */
+
 :root{
     --blue: #171D25;
     --green: #65C244;
@@ -18,10 +20,6 @@ body{
     font-weight: 500;
     background-color: var(--blue);
     color: var(--white);
-}
-
-#icons{
-    width: 4em;
 }
 
 /* the nav-bar */
@@ -63,6 +61,7 @@ body{
     color: var(--green);
 }
 
+ /* section home  */
 #home{
     display: flex;
     flex-direction: column;
@@ -73,12 +72,28 @@ body{
 }
 
 .name-dev h4{
-    margin: 0   ;
+    margin: 0;
 }
 
 .name-dev h1{
     font-size: 5vw;
+    font-weight: bold;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: writing 3s steps(20, end);
+    animation-delay: 1s;
+}
+
+@keyframes writing{
+    from{width: 0%;}
+    to{width: 100%;}
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent;}
+    50% { border-color: white; }
 }
 
 .social-media{
@@ -87,6 +102,12 @@ body{
     justify-content: space-between;
     text-decoration: none;
 }
+
+/* deixar icones pequenos */
+#icons{
+    width: 4em;
+}
+
 
 
 /* The switch - the box around the slider */
