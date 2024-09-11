@@ -13,8 +13,8 @@
         <nav class="nav-bar">
             <div class="menu-elements">
                 <ul>
-                    <li><a href="#"></a><span class="page">Page.</span><span class="section">Home ( )</span></li>
-                    <li><a href="#"></a><span class="page">Page.</span><span class="section">About ( )</span></li>
+                    <li><a href="#home"></a><span class="page">Page.</span><span class="section">Home ( )</span></li>
+                    <li><a href="#about"></a><span class="page">Page.</span><span class="section">About ( )</span></li>
                     <li><a href="#"></a><span class="page">Page.</span><span class="section">Projects ( )</span></li>
                     <li><a href="#"></a><span class="page">Page.</span><span class="section">Contact ( )</span></li>
                 </ul>
@@ -30,8 +30,8 @@
     <main>
         <section id="home">
             <div class="name-dev">
-            <h4>I'm<h4>
-                <h1>Matheus Santana</h1>
+                <h4>I'm<h4>
+                <h1 id="name-dev-h1"></h1>
             </div>
             <div class="social-media">
                 <div id="icons">
@@ -48,17 +48,21 @@
                 </div>
             </div>
         </section>
-        <aside>
-            <div class="code-home">
-                <h3>public class Person {     private string name;     private int stack;
-                         public Person(string name, int stack)     {         this.name = name;         this.Stack = stack;     }     public void ViewInformation()     {         Console.WriteLine($"Name: {name},
-                            Stack: {stack}");
-                            // Result Name: Matheus, 
-                                 Stack: Fullstack     } }</h3>
+        <div class="imagens-stacks"></div>
+        <section id="about">
+            <div class="description">
+                <p>Atualmente, estou em transição de carreira para a área de TI, focado em desenvolvimento de software. Tenho uma sólida base em <b>C#</b>, <b>Python</b>, <b>Javascript</b>  e desenvolvimento web (<b>HTML e CSS</b>), com cursos complementares em Programação Orientada a Objetos e Linguagem <b>C#</b>. Minha experiência profissional no comércio me proporcionou habilidades essenciais de liderança, gestão de equipe e resolução de problemas, que aplico agora na busca por desafios na área de desenvolvimento de software.
+                    <br>
+                    <br>
+                    Estou cursando Análise e Desenvolvimento de Sistemas pela Estácio, o que tem me permitido aprofundar ainda mais meus conhecimentos técnicos, sempre com uma abordagem proativa e voltada para o aprendizado constante. Estou em busca de oportunidades onde eu possa aplicar minhas habilidades técnicas e expandir meu conhecimento prático no desenvolvimento de soluções robustas e inovadoras.</p>
             </div>
-        </aside>
+            <div class="download-cv">
+                <button id="btn-download"><img src="../assets/img/icons/botao-de-download.png" alt="">Baixar Curriculo</button>
+            </div>
+        </section>
     </main>
-
+    <script src="../js/efeitoCodigo.js"></script>
     <script src="../js/darkLightMode.js"></script>
+    <script src="../js/efeitosStacks.js"></script>
 </body>
 </html>

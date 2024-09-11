@@ -9,7 +9,7 @@
 
 .bi-github{
     fill: grey;
-
+    transition: 0.2s ease-in-out;
 }
 
 .bi-github:hover{
@@ -22,6 +22,7 @@
 .svg-linkedin{
     cursor: pointer;
     fill: grey;
+    transition: 0.2s ease-in-out;
 }
 
 .svg-linkedin:hover{
@@ -29,10 +30,12 @@
 }
 
 .svg-instagram rect{
-    fill: grey;
+    fill: hsl(0, 0%, 50%);
+    transition: 0.2s ease-in-out;
 }
 .svg-instagram path{
     fill: #171D25;
+    transition: 0.2s ease-in-out;
 }
 
 .svg-instagram:hover{
@@ -54,6 +57,7 @@
 
 .svg-gmail path{
     fill: grey;
+    transition: 0.2s ease-in-out;   
 }
 
 .svg-gmail:hover{
