@@ -25,7 +25,7 @@ body{
 
 /* the nav-bar */
 .nav-bar{
-    position: fixed 0;
+    position: fixed;
     display: flex;
     width: 100vw;
     height: 4em;
@@ -53,6 +53,14 @@ body{
     text-decoration: none;
     height: 4em;
     cursor: pointer;
+}
+
+.menu-elements a{
+    display: flex;
+    align-items: center;
+    height: 4em;
+    text-decoration: none;
+    color: white;
 }
 
 .page, .section{
@@ -199,11 +207,10 @@ input:checked + .slider:before {
 }
 
 .description{
+    margin-left: 10%;
     display: flex;
-    position: relative;
     height: 100%;
     width: 60vw;
-    left: 10%;
     align-items: center;
 }
 
@@ -231,4 +238,14 @@ input:checked + .slider:before {
 #btn-download:hover{
     background-color: #225d88;
     border: none;
+}
+
+#projetcs{
+    width: 100vw;
+    height: 100vh;
+    background-color: #225d88;
+}
+
+.projetos{
+    height: 100vh;
 }
