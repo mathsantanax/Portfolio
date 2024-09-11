@@ -11,11 +11,11 @@
     --orange: #EB8F09;
 }
 
-body{
+.body{
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     font-family: 'KoHo';
     font-weight: 500;
     background-color: var(--blue);
@@ -26,15 +26,17 @@ body{
 /* the nav-bar */
 .nav-bar{
     position: fixed;
+    top: 0;
     display: flex;
-    width: 100vw;
+    width: 100dvw;
     height: 4em;
     background-color: var(--blue);
+    z-index: 1000;
 }
 
 .menu-elements{
     display: flex;
-    width: 100vw;
+    width: 100dvw;
     justify-content: center;
 }
 
@@ -78,8 +80,8 @@ body{
 #home{
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 93vh;
+    width: 100dvw;
+    height: 100dvh;
     justify-content: center;
     align-items: center;
 }
@@ -89,7 +91,7 @@ body{
 }
 
 .name-dev h1{
-    font-size: 5vw;
+    font-size: 5dvw;
     font-weight: bold;
     margin: 0;
     white-space: nowrap;
@@ -98,17 +100,16 @@ body{
 }
 
 .social-media{
-    width: 20vw;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
 }
 
-/* deixar icones pequenos */
 #icons{
-    width: 4em;
+    width: 6dvw;
 }
 
+/* icones que caem na tela */
 .imagens-stacks {
     overflow: hidden;
     opacity: 50%;
@@ -126,11 +127,11 @@ body{
         transform: translateY(-100px); 
     }
     100% {
-        transform: translateY(200vh); 
+        transform: translateY(200dvh); 
     }
 }
 
-/* The switch - the box around the slider */
+/* switch dark light mode */
 .switchLightDarkMode{
     position: relative;
     float: right;
@@ -177,7 +178,6 @@ body{
     transition: .4s;
 }
     
-    /* Style for when the checkbox is checked */
 input:checked + .slider 
 {
     background-color: #1B2939;
@@ -187,7 +187,6 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
     
-    /* Rounded sliders */
 .slider.round 
 {
     border-radius: 34px;
@@ -198,11 +197,11 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* style for about */
+/* seção about */
 
 #about{
-    width: 100vw;
-    height: 98vh;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
 }
 
@@ -210,13 +209,13 @@ input:checked + .slider:before {
     margin-left: 10%;
     display: flex;
     height: 100%;
-    width: 60vw;
+    width: 60dvw;
     align-items: center;
 }
 
 .download-cv{
     display: flex;
-    width: 60vw;
+    width: 60dvw;
     float: right;
     justify-content: center;
     align-items: center;
@@ -240,12 +239,34 @@ input:checked + .slider:before {
     border: none;
 }
 
+/* seção projetos */
+
 #projetcs{
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background-color: #225d88;
+    display: flex;
+    justify-content: center;
 }
 
-.projetos{
-    height: 100vh;
+.carousel{
+    width: 100dvw;
+    height: 50dvw;
+}
+
+.carousel-inner{
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    align-items: center;
+    left: 10dvw;
+    right: 10dvw;
+}
+
+.imanges-projeto{
+    height: 20em;
+}
+
+.carousel-item{
+    display: flex;
 }
