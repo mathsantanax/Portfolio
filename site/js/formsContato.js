@@ -1,20 +1,20 @@
-// function sendEmail() {
-//     var params = {
-//         nome: document.getElementById("nomeid").value,
-//         telefone: document.getElementById("foneid").value,
-//         email: document.getElementById("email").value,
-//         descricao: document.getElementById("text-description").value
-//     };
+function sendEmail() {
+    var params = {
+        nome: document.getElementById("nomeid").value,
+        telefone: document.getElementById("foneid").value,
+        email: document.getElementById("email").value,
+        descricao: document.getElementById("text-description").value
+    };
 
-//     emailjs.send("your-service-id", "your-template-id", params)
-//         .then(function(response) {
-//             console.log('SUCCESS!', response.status, response.text);
-//             alert("E-mail enviado com sucesso!");
-//         }, function(error) {
-//             console.log('FAILED...', error);
-//             alert("Falha ao enviar e-mail.");
-//         });
-// }
+    emailjs.send("your-service-id", "your-template-id", params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("E-mail enviado com sucesso!");
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("Falha ao enviar e-mail.");
+        });
+}
 
 
 function sendWhatsApp() {
