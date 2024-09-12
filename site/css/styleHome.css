@@ -222,21 +222,23 @@ input:checked + .slider:before {
 }
 
 #btn-download{
-    background-color: #1C557D;
-    cursor: pointer;
-    border-radius: 20px;
+    border-radius: 15px;
+    background: none;
+    color: #D9D9D9;
+    padding: 10px 20px;
     border: solid 1px;
     width: 180px;
     height: 50px;
     font-family: 'KoHo';
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #btn-download:hover{
-    background-color: #225d88;
-    border: none;
+    background-color: var(--green);
+    color: #1B2939;
 }
 
 /* seção projetos */
@@ -244,7 +246,6 @@ input:checked + .slider:before {
 #projetcs{
     width: 100dvw;
     height: 100dvh;
-    background-color: #225d88;
     display: flex;
     justify-content: center;
 }
@@ -279,4 +280,41 @@ input:checked + .slider:before {
 
 .used-img{
     height: 30px;
+}
+
+/* seção de contact */
+
+#contact{
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+}
+
+.forms h1{
+    margin-left: 0.5em;
+}
+
+.inputs{
+    border-radius: 20px;
+    border: none;
+    height: 2.5em;
+    width: 35em;
+    margin: 1em;
+    padding: 12px 16px 14px;;
+}
+
+.text-area{
+    height: 10em;
+}
+
+.send{
+    margin-left: 1em;
 }
