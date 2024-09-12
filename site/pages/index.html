@@ -207,10 +207,10 @@
             <form class="forms" action="">
                 <h1>Entre em Contato</h1>
                 <input class="inputs" type="text" id="nomeid" placeholder="Nome" required="required" name="nome" />
-                <input class="inputs" type="text" id="foneid" placeholder="Telefone" name="fone">
+                <input class="inputs" type="text" id="foneid" placeholder="Telefone 5511981669955" name="fone">
                 <input class="inputs" type="text" id="email" placeholder="E-Mail" name="email">
                 <textarea class="inputs text-area" placeholder="Descrição" name="description-text" id="text-description"></textarea>
-                <input id="btn-download" type="submit" class="send" onclick="send();" value="Send">
+                <input id="btn-download" type="button" class="send" onclick="sendEmail(); sendWhatsApp();" value="Send">
             </form>
         </div>
     </section>
@@ -218,6 +218,13 @@
     </main>
     <script src="../js/efeitos.js"></script>
     <script src="../js/darkLightMode.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="../js/formsContato.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("service_4k6gi4l");
+    })();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous"></script>
