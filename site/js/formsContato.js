@@ -6,7 +6,7 @@ function sendEmail() {
         descricao: document.getElementById("text-description").value
     };
 
-    emailjs.send("your-service-id", "your-template-id", params)
+    emailjs.send("your-service-id", "template_bkf7ybb", params)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert("E-mail enviado com sucesso!");
