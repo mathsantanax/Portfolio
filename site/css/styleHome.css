@@ -222,7 +222,7 @@ input:checked + .slider:before {
     align-items: center;
 }
 
-#btn-download{
+.btn-downloadAndSend{
     border-radius: 15px;
     background: none;
     color: #D9D9D9;
@@ -237,7 +237,7 @@ input:checked + .slider:before {
     align-items: center;
 }
 
-#btn-download:hover{
+.btn-downloadAndSend:hover{
     background-color: var(--green);
     color: #1B2939;
 }
@@ -305,7 +305,7 @@ input:checked + .slider:before {
 
 .inputs{
     border-radius: 20px;
-    border: none;
+    border: 1px solid;
     height: 2.5em;
     width: 35em;
     margin: 1em;

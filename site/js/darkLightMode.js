@@ -1,8 +1,10 @@
 const schemaPrefer = window.matchMedia('(prefers-color-scheme: light)'); // pegando o schema de cor do windows dark ou light
 const switchButton = document.getElementById('toggle-switch'); // pegando o elemento toggle-switch do documento html
 const navBar = document.querySelector('.nav-bar');
+const navbarH1 = document.querySelector('.name-dev h1');
 const menuElements = document.querySelectorAll('.menu-elements a');
-const btnDownload = document.querySelector('#btn-download');
+const btnDownloadAndSend = document.querySelectorAll('.btn-downloadAndSend');
+const Inputs = document.querySelectorAll('.inputs');
 
 // bootstrap mudando a cor
 const carouselExampleIndicators = document.querySelector('#carouselExampleIndicators');
@@ -38,16 +40,17 @@ function changeModeLigth()
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
     navBar.style.backgroundColor = "white";
-    btnDownload.style.color = "black";
-
+    navbarH1.style.borderRight = "2px solid black"
     // prevIcon.style.backgroundColor = 'black';
     // nextIcon.style.backgroundColor = 'black';
 
-    prevIcon.style.backgroundImage = 
+    prevIcon.style.backgroundImage = `url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%000000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e)`;
+    btnDownloadAndSend.forEach(element => {
+        element.style.color = "black";
+    });
     btnCarouselIndicators.forEach(element => {
         element.style.backgroundColor = 'black';
     });
-    
     menuElements.forEach(element => {
         element.style.color = "black";
     });
@@ -58,9 +61,15 @@ function changeModeDark()
     document.body.style.backgroundColor = "";
     document.body.style.color = "";
     navBar.style.backgroundColor = "";
-    btnDownload.style.color = ""; 
+    navbarH1.style.borderRight = ""
 
 
+    Inputs.forEach(element => {
+        element.style.backgroundColor = "";
+    });
+    btnDownloadAndSend.forEach(element => {
+        element.style.color = "";
+    });
     btnCarouselIndicators.forEach(element => {
         element.style.backgroundColor = '';
     });
