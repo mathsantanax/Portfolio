@@ -297,7 +297,6 @@ input:checked + .slider:before {
 .forms{
     display: flex;
     flex-direction: column;
-    height: 60dvh;
 }
 
 .forms h1{

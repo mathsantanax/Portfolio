@@ -14,7 +14,6 @@ const images = [
 
 let indexName = 0;
 const speed = 100;
-let timeOutId = null;
 
 function WriterName()
 {
@@ -26,12 +25,11 @@ function WriterName()
     }
     else
     {
-        clearTimeout(timeOutId);
         setTimeout(function () {
             document.getElementById('name-dev-h1').innerHTML = '';
             indexName = 0;
             WriterName();
-        }, 5000);
+        }, 1000);
     }
 }
 

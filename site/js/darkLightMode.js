@@ -19,17 +19,16 @@ const nextIcon = nextButton.querySelector('.carousel-control-next-icon');
 
 console.log(prevIcon);
 
-function MudarCorPagina()
-{
+document.addEventListener('DOMContentLoaded', (event) => {
     const switchButton = document.getElementById('toggle-switch');
 
     switchButton.checked = !schemaPreferLight.matches;
+
     if (switchButton.checked) {
         changeModeDark();
     } else {
         changeModeLigth();
     }
-
     switchButton.addEventListener('change', () => {
         if (switchButton.checked) {
             changeModeDark();
@@ -37,7 +36,11 @@ function MudarCorPagina()
             changeModeLigth();
         }
     });
-}
+});
+
+
+
+
 
 function changeModeLigth()
 {
@@ -81,7 +84,3 @@ function changeModeDark()
         element.style.color = "";
     });
 }
-
-window.onload = function () {
-    MudarCorPagina();
-};
