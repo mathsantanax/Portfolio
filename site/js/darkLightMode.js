@@ -1,4 +1,5 @@
-const schemaPrefer = window.matchMedia('(prefers-color-scheme: light)'); // pegando o schema de cor do windows dark ou light
+const schemaPreferLight = window.matchMedia('(prefers-color-scheme: light)'); // pegando o schema de cor do windows dark ou light
+const schemaPreferDark = window.matchMedia('(prefers-color-scheme: dark)'); // pegando o schema de cor do windows dark ou light
 const switchButton = document.getElementById('toggle-switch'); // pegando o elemento toggle-switch do documento html
 const navBar = document.querySelector('.nav-bar');
 const navbarH1 = document.querySelector('.name-dev h1');
@@ -18,11 +19,16 @@ const nextIcon = nextButton.querySelector('.carousel-control-next-icon');
 
 console.log(prevIcon);
 
-
-document.addEventListener('DOMContentLoaded', (event) => {
+function MudarCorPagina()
+{
     const switchButton = document.getElementById('toggle-switch');
 
-    switchButton.checked = !schemaPrefer.matches;
+    switchButton.checked = !schemaPreferLight.matches;
+    if (switchButton.checked) {
+        changeModeDark();
+    } else {
+        changeModeLigth();
+    }
 
     switchButton.addEventListener('change', () => {
         if (switchButton.checked) {
@@ -31,9 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             changeModeLigth();
         }
     });
-});
-
-
+}
 
 function changeModeLigth()
 {
@@ -77,3 +81,7 @@ function changeModeDark()
         element.style.color = "";
     });
 }
+
+window.onload = function () {
+    MudarCorPagina();
+};
