@@ -17,8 +17,6 @@ const btnCarouselIndicators = document.querySelectorAll('.carousel-indicators bu
 const prevIcon = prevButton.querySelector('.carousel-control-prev-icon');
 const nextIcon = nextButton.querySelector('.carousel-control-next-icon');
 
-console.log(prevIcon);
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const switchButton = document.getElementById('toggle-switch');
 
@@ -29,6 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
         changeModeLigth();
     }
+    
     switchButton.addEventListener('change', () => {
         if (switchButton.checked) {
             changeModeDark();
@@ -37,10 +36,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 });
-
-
-
-
 
 function changeModeLigth()
 {
