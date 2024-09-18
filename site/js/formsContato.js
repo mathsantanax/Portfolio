@@ -9,7 +9,7 @@
         var templateParams = {
         'to_name': 'EmailJS team',
         'from_name': params.nome,
-        'message': 'Telefone: ' + params.telefone + '\nE-mail: ' + params.email + '\nDescrição: ' + params.descricao
+        'message': 'Nome: ' + params.nome +'\nTelefone: ' + params.telefone + '\nE-mail: ' + params.email + '\nDescrição: ' + params.descricao
         };
     
         
