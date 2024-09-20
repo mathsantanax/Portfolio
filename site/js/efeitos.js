@@ -29,15 +29,15 @@ function WriterName()
             document.getElementById('name-dev-h1').innerHTML = '';
             indexName = 0;
             WriterName();
-        }, 1000);
+        }, 5000);
     }
 }
 
 downloadCvButton.addEventListener('click', () => {
-    const cvUrl = '../assets/CV/Curriculo_Matheus_Augusto_Santana_Atualizado.pdf'; // substitua com o caminho real do seu currículo
+    const cvUrl = '../assets/CV/Curriculo_Matheus_Augusto_Santana_Atualizado.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'currículo.pdf'; // nome do arquivo que será baixado
+    link.download = 'currículo.pdf';
     link.click();
 });
 
@@ -46,9 +46,9 @@ function createFallingImage(url) {
     img.src = url;
     img.classList.add('stacks-image');
     container.appendChild(img);
-    img.style.animationDelay = `${Math.random() * 3}s`; // random delay for each image
-    const startX = Math.random() * 100; // random horizontal starting position
-    img.style.left = `${startX}%`; // set initial horizontal position
+    img.style.animationDelay = `${Math.random() * 3}s`;
+    const startX = Math.random() * 100; 
+    img.style.left = `${startX}%`; 
 }
 
 images.forEach(createFallingImage);

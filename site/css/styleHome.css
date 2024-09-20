@@ -23,6 +23,10 @@
     overflow-x: hidden;
 }
 
+main{
+    width: 100dvw;
+}
+
 /* the nav-bar */
 .nav-bar{
     position: fixed;
@@ -266,8 +270,8 @@ input:checked + .slider:before {
 }
 
 .images-projeto{
-    width: 35em;
-    height: 20em;
+    width: 25dvw;
+    height: 25dvh;
 }
 
 .projects-item{
@@ -275,7 +279,7 @@ input:checked + .slider:before {
 }
 
 .description-project{
-    width: 35dvw;
+    width: 50dvw;
     margin-left: 2dvw;
 }
 
@@ -306,8 +310,8 @@ input:checked + .slider:before {
 .inputs{
     border-radius: 20px;
     border: 1px solid;
-    height: 2.5em;
-    width: 35em;
+    height: 4.5dvh;
+    width: 30dvw;
     margin: 1em;
     padding: 12px 16px 14px;;
 }

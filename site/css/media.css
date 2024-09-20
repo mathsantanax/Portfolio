@@ -1,0 +1,21 @@
+@media only screen and (max-width: 1274px){
+
+    #icons iframe{
+        height: 10dvh;
+        width: 10dvw;
+    }
+
+    .page{
+        display: none;
+    }
+    .carousel{
+        width: 100dvw;
+        height: 100dvw;
+    }
+
+}
+
+@media only screen and (max-width: 770px){
+    
+    
+}
