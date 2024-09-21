@@ -14,8 +14,42 @@
     }
 
 }
+@media only screen and (max-width: 768px) {
+    .nav-bar {
+        position: fixed;
+        top: 98vh;
+        font-size: 1.5dvh;
+        left: 5.5dvw;
+        width: 80%;
+        padding: 10px;
+        align-items: center;
+        background-color: rgba(240, 248, 255, 0.473);
+        border-radius: 50px;
+    }
 
-@media only screen and (max-width: 770px){
-    
-    
+    .menu-elements{
+        width: 100%;
+    }
+
+    .nav-bar ul{
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-bar a{
+        align-items: center;
+    }
+
+    .switchLightDarkMode{
+        display: none;
+    }
+
+    .name-dev h1{
+        font-size: 10dvw;
+    }
+
+    #icons iframe{
+        height: 15dvh;
+        width: 15dvw;
+    }
 }
