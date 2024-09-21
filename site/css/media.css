@@ -38,6 +38,7 @@
 
     .nav-bar a{
         align-items: center;
+        color: black;
     }
 
     .switchLightDarkMode{
@@ -51,5 +52,8 @@
     #icons iframe{
         height: 15dvh;
         width: 15dvw;
+    }
+    #about{
+        flex-direction: column;
     }
 }
