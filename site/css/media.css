@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1274px){
 
-    #icons iframe{
+    .icons iframe{
         height: 10dvh;
         width: 10dvw;
     }
@@ -15,16 +15,13 @@
 
 }
 @media only screen and (max-width: 768px) {
+
     .nav-bar {
-        position: fixed;
-        top: 98vh;
         font-size: 1.5dvh;
-        left: 5.5dvw;
-        width: 80%;
-        padding: 10px;
         align-items: center;
-        background-color: rgba(240, 248, 255, 0.473);
+        background-color: var(--blue-2);
         border-radius: 50px;
+        padding: 0;
     }
 
     .menu-elements{
@@ -34,6 +31,7 @@
     .nav-bar ul{
         width: 100%;
         align-items: center;
+        padding: 0;
     }
 
     .nav-bar a{
@@ -49,11 +47,85 @@
         font-size: 10dvw;
     }
 
-    #icons iframe{
-        height: 15dvh;
-        width: 15dvw;
+    .icons iframe{
+        height: 20dvh;
+        width: 20dvw;
     }
+
     #about{
         flex-direction: column;
     }
+
+    .description{
+        margin: 0;
+        width: 100%;
+    }
+
+    .description p{
+        margin: 0 15px 0;
+    }
+    .download-cv{
+        width: 100%;
+    }
+
+    #projects{
+        height: 90dvh;
+    }
+
+    .carousel-inner{
+        top: 20px;
+        height: 100%;
+        left: 0px;
+        justify-content: center;
+    }
+    .carousel{
+        height: 100%;
+    }
+    .carousel-item{
+        height: 100%;
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    .projects-item{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .projects-item a{
+        display: flex;
+        justify-content: center;
+    }
+
+    .projects-item a>img{
+        width: 90%;
+    }
+    
+    .description-project{
+        width: 100%;
+    }
+
+    .carousel-control-prev {
+        visibility: hidden;
+    }
+    
+    .carousel-control-next{
+        visibility: hidden;
+    }
+
+    .forms{
+        width: 100%;
+        align-items: center;
+    }
+
+    .inputs{
+        width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px){
+    .icons{
+        width: 6dvw;
+    }    
 }
