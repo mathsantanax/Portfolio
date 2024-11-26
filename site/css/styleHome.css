@@ -319,3 +319,9 @@ input:checked + .slider:before {
 .send{
     margin-left: 1em;
 }
+
+#copywriter{
+    display: flex;
+    justify-content: center;
+    height: 0;
+}
