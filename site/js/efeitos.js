@@ -34,7 +34,7 @@ function WriterName()
 }
 
 downloadCvButton.addEventListener('click', () => {
-    const cvUrl = '../assets/CV/Curriculo_Matheus_Augusto_Santana_Atualizado.pdf';
+    const cvUrl = '../assets/CV/Profile.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'currículo.pdf';
