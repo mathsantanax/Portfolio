@@ -34,10 +34,10 @@ function WriterName()
 }
 
 downloadCvButton.addEventListener('click', () => {
-    const cvUrl = '../assets/CV/Profile.pdf';
+    const cvUrl = '../assets/CV/Matheus Augusto Santana.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'currículo.pdf';
+    link.download = 'CV.pdf';
     link.click();
 });
 
