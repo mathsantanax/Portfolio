@@ -2,7 +2,9 @@ import React from 'react'
 
 function Projetos() {
   return (
-    <div>Projetos</div>
+    <div className='h-screen'>
+      
+    </div>
   )
 }
 

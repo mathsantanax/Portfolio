@@ -3,8 +3,8 @@ import {SunIcon, MoonIcon} from "@heroicons/react/24/outline";
 
 function Header({darkMode, SetDarkMode}) {
     return (
-        <header className=" top-0 w-full h-16 px-8 flex items-center justify-end">
-            <ul className="fixed flex items-center gap-5">
+        <header className="fixed top-0 bg-[#EBEBEB] max-w-[70%] mx-auto w-full h-16 px-8 flex items-center justify-end">
+            <ul className="flex items-center gap-5">
                 <li>
                     <a href="#sobre" className="font-bold font-mono bg-transparent text-[#2e2e2e52] hover:text-[#2e2e2e]">Sobre</a>
                 </li>
