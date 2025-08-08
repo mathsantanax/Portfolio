@@ -4,7 +4,7 @@ import Parte2 from "../../assets/parte-2.svg";
 
 export default function LogoScroll() {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center mr-40">
       <motion.div
         initial={{ x: "-200px", opacity: 0 }}
         animate={{ y:"0", x: "120px", opacity: 1 }}
@@ -17,7 +17,7 @@ export default function LogoScroll() {
         initial={{ x: "200px", opacity: 0 }}
         animate={{y:"30px", x: "0", opacity: 1 }}
         transition={{ duration: 2, delay: 8 }}
-        className="absolute drop-shadow-[15px_0px_8px_#ff3b3e]"
+        className="absolute drop-shadow-[15px_0px_8px_#ff3b3e] "
       >
         <img src={Parte2} alt="Parte 2" className="w-[150%]" />
       </motion.div>
