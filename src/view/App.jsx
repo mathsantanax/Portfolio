@@ -12,10 +12,9 @@ function App() {
     <>
         <LogoIntro onFinish={() => setIntroFinished(true)} />
       <div className={`max-w-[70%] mx-auto transition-opacity duration-700 ${introFinished ? "opacity-100" : "opacity-0"}`}>
+        <Sidebar/>
         <Home/>
         <Header/>
-        <Sidebar/>
-        <Projetos/>
       </div>
     </>
   )

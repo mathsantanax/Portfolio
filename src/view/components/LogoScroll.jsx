@@ -14,7 +14,7 @@ export default function LogoScroll() {
   const startX = window.innerWidth / 2 - -50; // centro (ajuste conforme tamanho)
   const startY = window.innerHeight / 2 - 100;
   const endX = window.innerWidth - 450; // canto direito
-  const endY = window.innerHeight - 250; // canto inferior
+  const endY = window.innerHeight - 190; // canto inferior
 
   const x = useTransform(scrollYProgress, [0, 1], [startX, endX], { ease: easeInOut });
   const y = useTransform(scrollYProgress, [0, 1], [startY, endY], { ease: easeInOut });
@@ -45,20 +45,20 @@ export default function LogoScroll() {
           <motion.img
             src={Parte1}
             alt="Parte 1"
-            className="w-[150px] ml-28 drop-shadow-[15px_0px_8px_#ff6b6e]"
+            className="w-[150px] Logo ml-28 drop-shadow-[15px_0px_8px_#ff6b6e]"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1, delay: 7.5 }}
           />
 
           {/* Parte 2 */}
           <motion.img
             src={Parte2}
             alt="Parte 2"
-            className="w-[150px] mt-8.5 drop-shadow-[15px_0px_8px_#ff3b3e] absolute"
+            className="w-[150px]  mt-8.5 drop-shadow-[15px_0px_8px_#ff3b3e] absolute"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: 1, delay: 7.5 }}
           />
         </motion.div>
       </motion.div>

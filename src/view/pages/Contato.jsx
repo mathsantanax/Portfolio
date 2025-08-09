@@ -2,7 +2,9 @@ import React from 'react'
 
 function Contato() {
   return (
-    <div>Contato</div>
+    <div className='h-screen'>
+    Contato
+    </div>
   )
 }
 
