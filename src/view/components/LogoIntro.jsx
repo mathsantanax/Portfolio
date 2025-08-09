@@ -15,7 +15,7 @@ function LogoIntro({onFinish}) {
             setText(fulltext.substring(0, i + 1));
             i++;
             if(i >= fulltext.length){
-                clearInterval(typing);
+                clearInterval(typing);1
                 setTimeout(() => setStep("backspace"), 3000);
             }
         }, 100);
@@ -48,7 +48,7 @@ function LogoIntro({onFinish}) {
             className={`font-mono font-bold text-[#1a1a1a] border-r-4 border-[#1a1a1a] px-2 whitespace-nowrap overflow-hidden fixed z-50 transition-all duration-1000 ease-in-out
             ${inHeader ? "top-5 left-[15%] text-2xl scale-75%" : "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl"}
             ${step === "final" ? "fixed animate-pulse text-[#1a1a1a]" : ""}
-            `}
+            `} 
         >
             {"{"}
             {text}

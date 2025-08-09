@@ -35,7 +35,7 @@ function Projetos() {
         initial={{ x: '100vw', opacity: 0 }} // Começa fora da tela à direita
         animate={isVisible ? { x: 0, opacity: 1 } : {}} // Animação quando isVisible é true
         transition={{ duration: 1 }} // Duração da animação
-        className='bg-[#222B599b] w-9/10 h-9/15 rounded-4xl backdrop-blur-lg'>
+        className='bg-[#495bb688] w-9/10 h-9/15 rounded-4xl backdrop-blur-lg'>
 
       <Cards/>
 

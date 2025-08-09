@@ -11,10 +11,10 @@ export default function LogoScroll() {
   });
 
   // Calcula posições
-  const startX = window.innerWidth / 2 - -50; // centro (ajuste conforme tamanho)
+  const startX = window.innerWidth / 2 - -50; 
   const startY = window.innerHeight / 2 - 100;
-  const endX = window.innerWidth - 450; // canto direito
-  const endY = window.innerHeight - 190; // canto inferior
+  const endX = window.innerWidth - 450;
+  const endY = window.innerHeight - 190;
 
   const x = useTransform(scrollYProgress, [0, 1], [startX, endX], { ease: easeInOut });
   const y = useTransform(scrollYProgress, [0, 1], [startY, endY], { ease: easeInOut });
@@ -34,7 +34,6 @@ export default function LogoScroll() {
         }}
         className="flex items-center justify-center pointer-events-none"
       >
-        {/* Contêiner do logo */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

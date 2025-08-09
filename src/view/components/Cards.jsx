@@ -1,4 +1,5 @@
 // Cards.js
+import { Carousel } from '@material-tailwind/react';
 import React, { useEffect, useState } from 'react';
 
 function Cards() {
@@ -9,7 +10,7 @@ function Cards() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/mathsantanax/repos');
+        const response = await fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos');
         if (!response.ok) {
           throw new Error('Erro ao buscar repositórios');
         }
@@ -36,7 +37,7 @@ function Cards() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <Carousel className='rounded-xl'>
       {repos.length > 0 ? (
         repos.map(repo => (
           <div key={repo.id} className="border rounded-lg p-4 shadow-md">
@@ -51,7 +52,7 @@ function Cards() {
       ) : (
         <div>Nenhum repositório com estrelas encontrado.</div>
       )}
-    </div>
+    </Carousel>
   );
 }
 

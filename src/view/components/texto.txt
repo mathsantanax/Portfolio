@@ -1,45 +1,95 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Carousel, IconButton } from "@material-tailwind/react";
 
-export default function Sidebar() {
-    const [activePage, setActivePage] = useState("home");
+export default function ProjectCarousel() {
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    const menuItems = [
-        { id: "home", label: "Home" },
-        { id: "projetos", label: "Projetos" },
-        { id: "contato", label: "Contato" },
-    ];
-
-    const handleNavigation = (id) => {
-        setActivePage(id);
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
+  useEffect(() => {
+    const fetchRepos = async () => {
+      try {
+        const response = await fetch("https://api.github.com/users/mathsantanax/repos");
+        if (!response.ok) throw new Error("Erro ao buscar repositórios");
+        const data = await response.json();
+        const starredRepos = data.filter(repo => repo.stargazers_count > 0);
+        setRepos(starredRepos);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
+    fetchRepos();
+  }, []);
 
-    return (
-        <div className="flex">
-        {/* Sidebar */}
-        <aside className="w-[20%] top-0 h-lvh bg-transparent text-[#1a1a1a] fixed left-0 flex flex-col items-center justify-center pr-0">
-            <nav className="list-disc flex flex-col gap-4 font-mono mg-2">
-            {menuItems.map((item) => (
-                <li
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                className={`
-                    text-[1.8rem] transition cursor-pointer ease-in-out duration-200
-                    ${
-                    activePage === item.id
-                        ? "font-bold border-b-2 border-[#ff6b6e] blur-none"
-                        : "blur-[2px] hover:blur-none hover:font-bold hover:border-b-2 hover:border-[#ff6b6e]"
-                    }
-                `}
+  if (loading) return <div>Carregando...</div>;
+  if (error) return <div>Erro: {error}</div>;
+
+  return (
+    <div className="w-full flex justify-center">
+      <Carousel
+        className="w-[320px] md:w-[380px] lg:w-[420px]"
+        autoplay={false}
+        loop
+        prevArrow={({ handlePrev }) => (
+          <IconButton
+            variant="text"
+            color="white"
+            size="lg"
+            onClick={handlePrev}
+            className="!absolute top-2/4 left-4 -translate-y-2/4"
+          >
+            ‹
+          </IconButton>
+        )}
+        nextArrow={({ handleNext }) => (
+          <IconButton
+            variant="text"
+            color="white"
+            size="lg"
+            onClick={handleNext}
+            className="!absolute top-2/4 right-4 -translate-y-2/4"
+          >
+            ›
+          </IconButton>
+        )}
+      >
+        {repos.map((repo, index) => (
+          <div
+            key={repo.id}
+            className={`flex justify-center items-center h-64 relative perspective-1000 ${
+              index % 2 === 0 ? "translate-y-1" : "-translate-y-1"
+            }`}
+          >
+            {/* Moldura glass pequena */}
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg w-full h-full transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180 relative">
+              
+              {/* Frente - imagem temporária azul sky */}
+              <div className="absolute inset-0 bg-sky-400 rounded-xl backface-hidden flex items-center justify-center">
+                <span className="text-white font-bold">Imagem</span>
+              </div>
+
+              {/* Verso - informações do projeto */}
+              <div className="absolute inset-0 bg-[#ff6b6e] rounded-xl p-4 flex flex-col justify-center items-center text-white rotate-y-180 backface-hidden">
+                <h3 className="text-lg font-bold mb-2">{repo.name}</h3>
+                <p className="text-sm text-center mb-3">
+                  {repo.description || "Sem descrição"}
+                </p>
+                <p className="mb-2">⭐ {repo.stargazers_count}</p>
+                <a
+                  href={repo.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
                 >
-                {item.label}
-                </li>
-            ))}
-            </nav>
-        </aside>
-        </div>
-    );
+                  Ver no GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  );
 }

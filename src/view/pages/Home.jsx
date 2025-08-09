@@ -4,6 +4,7 @@ import LogoScroll from '../components/LogoScroll';
 import Projetos from './Projetos';
 import Contato from './Contato';
 import Sidebar from '../components/Sidebar'; // Importando a Sidebar
+import TypingPhrase from '../components/TypingPhrase';
 
 export default function Home() {
   const [activePage, setActivePage] = useState("home");
@@ -35,9 +36,7 @@ export default function Home() {
       <main>
         <section id='home' className='h-screen top-0 grid grid-cols-2 gap-2 justify-center'>
           <div className='text-start ml-13 items-center flex'>
-            <h2 className='drop-shadow-xl/50 text-[#1e1e1e] text-3xl'>
-              Ajudando Pessoas e Empresas se conectarem através de soluções Tecnológicas.
-            </h2>
+            <TypingPhrase/>
           </div>
           <div className='h-screen'>
             <LogoScroll />
