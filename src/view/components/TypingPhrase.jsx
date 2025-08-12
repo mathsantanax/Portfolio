@@ -21,7 +21,7 @@ export default function TypingPhrase() {
   useEffect(() => {
     const startTimer = setTimeout(() => {
       setStartTyping(true);
-    }, 7000); // 7000 ms = 7 segundos
+    }, 7000);
     return () => clearTimeout(startTimer);
   }, []);
 
@@ -34,7 +34,7 @@ export default function TypingPhrase() {
   }, []);
 
   useEffect(() => {
-    if (!startTyping) return; // só começa após o delay inicial
+    if (!startTyping) return;
 
     let timer;
 
@@ -50,10 +50,10 @@ export default function TypingPhrase() {
       if (text.length < second.length) {
         timer = setTimeout(() => setText(second.slice(0, text.length + 1)), 50);
       } else {
-        timer = setTimeout(() => {
+        timer = setTimeout(() => { 
           setPhase(2);
           setText("");
-        }, 100);
+        }, 1000);
       }
     } 
     

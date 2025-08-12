@@ -1,13 +1,12 @@
-// Home.js
 import React, { useEffect, useState } from 'react';
 import LogoScroll from '../components/LogoScroll';
 import Projetos from './Projetos';
 import Contato from './Contato';
-import Sidebar from '../components/Sidebar'; // Importando a Sidebar
+import Sidebar from '../components/SideBar';
 import TypingPhrase from '../components/TypingPhrase';
 
 export default function Home() {
-  const [activePage, setActivePage] = useState("home");
+  const [activePage, setActivePage] = useState('home');
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -36,18 +35,18 @@ export default function Home() {
       <main>
         <section id='home' className='h-screen top-0 grid grid-cols-2 gap-2 justify-center'>
           <div className='text-start ml-13 items-center flex'>
-            <TypingPhrase/>
+            <TypingPhrase />
           </div>
           <div className='h-screen'>
             <LogoScroll />
           </div>
         </section>
 
-        <section id='projetos'>
+        <section id='projetos' className='h-screen'>
           <Projetos />
         </section>
 
-        <section id='contato'>
+        <section id='contato' className='h-screen'>
           <Contato />
         </section>
       </main>

@@ -1,5 +1,4 @@
-// Sidebar.js
-import { useState, useEffect } from "react";
+
 
 export default function Sidebar({ activePage, setActivePage }) {
     const menuItems = [
