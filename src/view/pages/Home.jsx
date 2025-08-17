@@ -49,7 +49,7 @@ export default function Home() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
               className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/5
-                        w-[65%] h-[70%] rounded-3xl backdrop-blur-lg bg-[#222b59a1] shadow-xg z-50 flex items-center justify-center"
+                        w-[65%] h-[70%] rounded-3xl backdrop-blur-lg bg-[#1d2e8363] shadow-xg z-50 flex items-center justify-center"
             >
               <AnimatePresence mode="wait">
                 {activePage === 'projetos' && (

@@ -14,33 +14,33 @@ body{
   fill: #1e1e1e;
 }
 
-        .contact-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-        
-        .contact-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .hover-message {
-            position: absolute;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            pointer-events: none;
-            text-align: center;
-            width: 100%;
-            bottom: -30px;
-            color: #EBEBEB;
-            font-size: 0.9rem;
-        }
-        
-        .contact-card:hover .hover-message {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .contact-card:hover .contact-icon {
-            transform: scale(1.1);
-        }
+.contact-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.contact-icon {
+    transition: all 0.3s ease;
+}
+
+.hover-message {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+    bottom: -30px;
+    color: #EBEBEB;
+    font-size: 0.9rem;
+}
+
+.contact-card:hover .hover-message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+}

@@ -6,7 +6,7 @@ export default function TypingPhrase() {
   const [loopIndex, setLoopIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  const [startTyping, setStartTyping] = useState(false); // controla início
+  const [startTyping, setStartTyping] = useState(false); 
 
   const first = "Mais que Código.";
   const second = "Mais que Programação.";
@@ -17,7 +17,6 @@ export default function TypingPhrase() {
     "Construindo Experiências Digitais."
   ];
 
-  // Delay inicial de 7 segundos
   useEffect(() => {
     const startTimer = setTimeout(() => {
       setStartTyping(true);
@@ -25,7 +24,6 @@ export default function TypingPhrase() {
     return () => clearTimeout(startTimer);
   }, []);
 
-  // Piscar o cursor
   useEffect(() => {
     const cursorTimer = setInterval(() => {
       setShowCursor((prev) => !prev);
