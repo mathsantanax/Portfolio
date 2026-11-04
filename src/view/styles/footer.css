@@ -1,0 +1,14 @@
+:root {
+  --footer-border: #e5e5e5;
+  --footer-fg: #737373;
+}
+
+.dark {
+  --footer-border: #27272a;
+  --footer-fg: #737373;
+}
+
+.site-footer {
+  border-top: 1px solid var(--footer-border);
+  color: var(--footer-fg);
+}

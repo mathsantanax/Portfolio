@@ -1,1 +1,78 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #ff6b6e;
+  --color-brand-soft: #ff6b6e56;
+  --color-brand-deep: #1d2e83;
+  --color-surface-light: #EBEBEB;
+  --color-surface-dark: #111113;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Caprasimo", cursive;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+body, body *{
+  box-sizing: content-box;
+}
+
+body {
+  @apply text-neutral-800 dark:text-neutral-100;
+  font-family: var(--font-sans);
+  background: transparent;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+  @apply bg-surface-light dark:bg-surface-dark;
+}
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-surface-light dark:ring-offset-surface-dark;
+  }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition active:scale-95;
+}
+@utility btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition active:scale-95 bg-neutral-900 text-white hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200;
+}
+@utility btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition active:scale-95 border border-neutral-300 hover:border-brand hover:text-brand dark:border-neutral-700;
+}
+@utility section {
+  @apply mx-auto max-w-5xl px-5 py-20 md:px-8;
+}
+@utility link-underline {
+  @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-brand after:transition-all hover:after:w-full;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,52 @@
+:root {
+  --contact-card-bg: transparent;
+  --contact-card-border: #e5e5e5;
+  --contact-card-hover-border: #ff6b6e;
+  --contact-card-shadow-hover: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+
+  --contact-icon-bg: rgba(255, 107, 110, 0.1);
+  --contact-icon-fg: #ff6b6e;
+  --contact-icon-hover-bg: #ff6b6e;
+  --contact-icon-hover-fg: #ffffff;
+
+  --contact-label-fg: #1f1f1f;
+  --contact-value-fg: #737373;
+}
+
+.dark {
+  --contact-card-border: #27272a;
+  --contact-card-hover-border: #ff6b6e;
+  --contact-card-shadow-hover: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+
+  --contact-icon-bg: rgba(255, 107, 110, 0.18);
+  --contact-icon-fg: #ff8a8c;
+  --contact-icon-hover-bg: #ff6b6e;
+  --contact-icon-hover-fg: #ffffff;
+
+  --contact-label-fg: #f5f5f5;
+  --contact-value-fg: #a3a3a3;
+}
+
+.contact-card {
+  background-color: var(--contact-card-bg);
+  border: 1px solid var(--contact-card-border);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--contact-card-hover-border);
+  box-shadow: var(--contact-card-shadow-hover);
+}
+
+.contact-icon {
+  background-color: var(--contact-icon-bg);
+  color: var(--contact-icon-fg);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.contact-card:hover .contact-icon {
+  background-color: var(--contact-icon-hover-bg);
+  color: var(--contact-icon-hover-fg);
+}
+
+.contact-label { color: var(--contact-label-fg); }
+.contact-value { color: var(--contact-value-fg); }

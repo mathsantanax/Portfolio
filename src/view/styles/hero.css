@@ -1,0 +1,112 @@
+:root {
+  --hero-badge-bg: rgba(255, 107, 110, 0.1);
+  --hero-badge-border: rgba(255, 107, 110, 0.4);
+  --hero-badge-fg: #ff6b6e;
+
+  --hero-title-fg: #1f1f1f;
+  --hero-subtitle-fg: #525252;
+
+  --hero-btn-primary-bg: #111111;
+  --hero-btn-primary-fg: #ffffff;
+  --hero-btn-primary-hover-bg: #333333;
+
+  --hero-btn-ghost-bg: transparent;
+  --hero-btn-ghost-fg: #1f1f1f;
+  --hero-btn-ghost-border: #d4d4d4;
+  --hero-btn-ghost-hover-border: #ff6b6e;
+  --hero-btn-ghost-hover-fg: #ff6b6e;
+
+  /* Cursor do typing */
+  --typing-cursor-fg: #ff6b6e;
+}
+
+.dark {
+  --hero-badge-bg: rgba(255, 107, 110, 0.15);
+  --hero-badge-border: rgba(255, 107, 110, 0.5);
+  --hero-badge-fg: #ff8a8c;
+
+  --hero-title-fg: #f5f5f5;
+  --hero-subtitle-fg: #a3a3a3;
+
+  --hero-btn-primary-bg: #ffffff;
+  --hero-btn-primary-fg: #111111;
+  --hero-btn-primary-hover-bg: #e5e5e5;
+
+  --hero-btn-ghost-fg: #f5f5f5;
+  --hero-btn-ghost-border: #404040;
+
+  --typing-cursor-fg: #ff8a8c;
+}
+
+/* ===== Hero ===== */
+.hero-badge {
+  background-color: var(--hero-badge-bg);
+  border: 1px solid var(--hero-badge-border);
+  color: var(--hero-badge-fg);
+}
+
+/* Cor e fonte. O TAMANHO vem do Tailwind no JSX (text-3xl md:text-5xl) */
+.hero-title {
+  color: var(--hero-title-fg);
+  font-family: var(--font-display, "Caprasimo", cursive);
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    line-height: 1.1;
+  }
+}
+
+.hero-subtitle { color: var(--hero-subtitle-fg); }
+
+.hero-btn-primary {
+  background-color: var(--hero-btn-primary-bg);
+  color: var(--hero-btn-primary-fg);
+}
+.hero-btn-primary:hover { background-color: var(--hero-btn-primary-hover-bg); }
+
+.hero-btn-ghost {
+  background-color: var(--hero-btn-ghost-bg);
+  color: var(--hero-btn-ghost-fg);
+  border: 1px solid var(--hero-btn-ghost-border);
+}
+.hero-btn-ghost:hover {
+  border-color: var(--hero-btn-ghost-hover-border);
+  color: var(--hero-btn-ghost-hover-fg);
+}
+
+/* ===== TypingPhrase: layout estável =====
+   Reserva a altura de 3 linhas para o texto não empurrar a página.
+   O tamanho do texto é definido no JSX (text-3xl md:text-5xl). */
+.typing-fixed {
+  display: flex;
+  flex-direction: column;
+  min-height: 7rem; /* mobile: ~3 linhas de text-3xl (30px × 1.15) */
+}
+
+@media (min-width: 768px) {
+  .typing-fixed {
+    min-height: 10.5rem; /* desktop: ~3 linhas de text-5xl (48px × 1.1) */
+  }
+}
+
+.typing-line {
+  display: block;
+  min-height: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 0.6ch;
+  color: var(--typing-cursor-fg);
+  font-weight: 400;
+  text-align: center;
+}
+
+.typing-cursor-space {
+  display: inline-block;
+  width: 0.6ch;
+}

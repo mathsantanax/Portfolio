@@ -1,0 +1,58 @@
+:root {
+  --card-page-bg: #EBEBEB;
+  --card-surface-bg: #ffffff;
+  --card-surface-border: #e5e5e5;
+  --card-surface-hover-border: #ff6b6e;
+
+  --card-title-fg: #1f1f1f;
+  --card-subtitle-fg: #525252;
+  --card-muted-fg: #737373;
+  --card-label-fg: #737373;
+
+  --card-avatar-bg: #d4d4d4;
+
+  --card-cta-bg: #111111;
+  --card-cta-fg: #ffffff;
+  --card-cta-hover-bg: #333333;
+}
+
+.dark {
+  --card-page-bg: #111113;
+  --card-surface-bg: #18181b;
+  --card-surface-border: #27272a;
+  --card-surface-hover-border: #ff6b6e;
+
+  --card-title-fg: #f5f5f5;
+  --card-subtitle-fg: #a3a3a3;
+  --card-muted-fg: #a3a3a3;
+  --card-label-fg: #737373;
+
+  --card-avatar-bg: #27272a;
+
+  --card-cta-bg: #ffffff;
+  --card-cta-fg: #111111;
+  --card-cta-hover-bg: #e5e5e5;
+}
+
+.card-page { background-color: var(--card-page-bg); }
+
+.card-avatar { background-color: var(--card-avatar-bg); }
+
+.card-title { color: var(--card-title-fg); }
+.card-subtitle { color: var(--card-subtitle-fg); }
+.card-muted { color: var(--card-muted-fg); }
+.card-label { color: var(--card-label-fg); }
+
+.card-surface {
+  background-color: var(--card-surface-bg);
+  border: 1px solid var(--card-surface-border);
+  transition: border-color 0.2s ease;
+}
+.card-surface:hover { border-color: var(--card-surface-hover-border); }
+
+.card-cta {
+  background-color: var(--card-cta-bg);
+  color: var(--card-cta-fg);
+  transition: background-color 0.2s ease;
+}
+.card-cta:hover { background-color: var(--card-cta-hover-bg); }

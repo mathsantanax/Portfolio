@@ -1,0 +1,180 @@
+/* ============================================================
+   Header — todas as cores centralizadas em variáveis
+   Mude aqui e o header inteiro acompanha.
+   ============================================================ */
+
+:root {
+  /* Fundo (use rgba para o blur funcionar bem) */
+  --header-bg: rgba(245, 245, 245, 0.82);
+  --header-bg-solid: #f5f5f5;
+
+  /* Borda */
+  --header-border: rgba(0, 0, 0, 0.08);
+
+  /* Sombra */
+  --header-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.18);
+
+  /* Texto principal (logo + links) */
+  --header-fg: #1f1f1f;
+  --header-fg-muted: #4b4b4b;
+
+  /* Hover de botões e links */
+  --header-hover-bg: #ff8a8c;
+  --header-hover-fg: #000000;
+
+  /* Drawer mobile */
+  --header-drawer-bg: rgba(245, 245, 245, 0.96);
+  --header-drawer-border: #ff8a8c;
+
+  /* CTA dentro do drawer */
+  --header-cta-bg: #111111;
+  --header-cta-fg: #ffffff;
+
+  /* Cor de destaque (item ativo da bottom nav) */
+  --header-accent: #ff6b6e;
+}
+
+.dark {
+  --header-bg: rgba(15, 15, 16, 0.82);
+  --header-bg-solid: #0f0f10;
+
+  --header-border: rgba(255, 255, 255, 0.08);
+
+  --header-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+
+  --header-fg: #f5f5f5;
+  --header-fg-muted: #c9c9c9;
+
+  --header-hover-bg: #ff8a8c;
+  --header-hover-fg: #ffffff;
+
+  --header-drawer-bg: rgba(15, 15, 16, 0.96);
+  --header-drawer-border: #ff8a8c;
+
+  --header-cta-bg: #ffffff;
+  --header-cta-fg: #111111;
+
+  --header-accent: #ff8a8c;
+}
+
+/* Container flutuante */
+.app-header {
+  background-color: var(--header-bg);
+  border: 1px solid var(--header-border);
+  box-shadow: var(--header-shadow);
+  color: var(--header-fg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Logo */
+.app-header-logo {
+  color: var(--header-fg);
+}
+.app-header-logo:hover {
+  background-color: var(--header-hover-bg);
+}
+
+/* Links de seção (desktop) */
+.app-header-link {
+  color: var(--header-fg-muted);
+}
+.app-header-link:hover {
+  background-color: var(--header-hover-bg);
+  color: var(--header-hover-fg);
+}
+
+/* Link ativo (desktop) */
+.app-header-link-active {
+  color: var(--header-hover-fg);
+  background-color: var(--header-hover-bg);
+}
+
+/* Botões de ícone (tema e idioma) */
+.app-header-icon-btn {
+  color: var(--header-fg);
+}
+.app-header-icon-btn:hover {
+  background-color: var(--header-hover-bg);
+}
+
+/* Drawer mobile */
+.app-header-drawer {
+  background-color: var(--header-drawer-bg);
+  border: 1px solid var(--header-drawer-border);
+  box-shadow: var(--header-shadow);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.app-header-drawer .app-header-link {
+  color: var(--header-fg);
+}
+
+/* CTA dentro do drawer */
+.app-header-cta {
+  background-color: var(--header-cta-bg);
+  color: var(--header-cta-fg);
+}
+
+/* ============================================================
+   Bottom nav (mobile)
+   ============================================================ */
+
+.app-bottom-nav {
+  background-color: var(--header-bg);
+  border-top: 1px solid var(--header-border);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, 0.15);
+}
+
+.app-bottom-item {
+  color: var(--header-fg-muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.app-bottom-item:hover {
+  background-color: var(--header-hover-bg);
+  color: var(--header-hover-fg);
+}
+
+.app-bottom-item-active {
+  color: var(--header-accent);
+}
+
+.app-bottom-item-active:hover {
+  color: var(--header-accent);
+}
+
+/* ============ MOBILE: barra inferior flutuante ============ */
+.app-header-mobile {
+  /* safe area para iPhone com notch */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app-header-mobile .app-header {
+  box-shadow: 0 -10px 30px -12px rgba(0, 0, 0, 0.18);
+}
+
+.dark .app-header-mobile .app-header {
+  box-shadow: 0 -10px 30px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Itens da barra inferior */
+.app-bottom-item {
+  color: var(--header-fg-muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.app-bottom-item:hover {
+  background-color: var(--header-hover-bg);
+  color: var(--header-hover-fg);
+}
+
+.app-bottom-item-active {
+  color: var(--header-accent);
+}
+
+.app-bottom-item-active:hover {
+  color: var(--header-accent);
+}

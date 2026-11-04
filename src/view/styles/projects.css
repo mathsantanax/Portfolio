@@ -1,0 +1,179 @@
+:root {
+  --project-card-bg: #ffffff;
+  --project-card-border: #e5e5e5;
+  --project-card-hover-border: #ff6b6e;
+  --project-card-shadow-hover: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+
+  --project-title-fg: #1f1f1f;
+  --project-desc-fg: #525252;
+
+  --project-preview-bg: #e5e5e5;
+  --project-preview-fg: #9a9a9a;
+
+  --project-tag-bg: rgba(255, 107, 110, 0.1);
+  --project-tag-fg: #ff6b6e;
+
+  --project-link-fg: #1f1f1f;
+  --project-link-hover-fg: #ff6b6e;
+
+  /* Número estilo Netflix — tema claro: preenchimento branco + borda preta */
+  --project-rank-fill: #ffffff00;
+  --project-rank-stroke: #111111;
+
+  /* Setas */
+  --project-arrow-bg: #ffffff;
+  --project-arrow-border: #e5e5e5;
+  --project-arrow-fg: #1f1f1f;
+  --project-arrow-hover-bg: #ff6b6e;
+  --project-arrow-hover-fg: #ffffff;
+}
+
+.dark {
+  --project-card-bg: #18181b;
+  --project-card-border: #27272a;
+  --project-card-hover-border: #ff6b6e;
+  --project-card-shadow-hover: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+
+  --project-title-fg: #f5f5f5;
+  --project-desc-fg: #a3a3a3;
+
+  --project-preview-bg: #27272a;
+  --project-preview-fg: #525252;
+
+  --project-tag-bg: rgba(255, 107, 110, 0.18);
+  --project-tag-fg: #ff8a8c;
+
+  --project-link-fg: #f5f5f5;
+  --project-link-hover-fg: #ff8a8c;
+
+  /* Número estilo Netflix — tema escuro: preenchimento preto + borda branca */
+  --project-rank-fill: #11111100;
+  --project-rank-stroke: #ffffff;
+
+  /* Setas */
+  --project-arrow-bg: #18181b;
+  --project-arrow-border: #27272a;
+  --project-arrow-fg: #f5f5f5;
+  --project-arrow-hover-bg: #ff6b6e;
+  --project-arrow-hover-fg: #ffffff;
+}
+
+/* ===== Carrossel ===== */
+.projects-carousel {
+  position: relative;
+}
+
+.projects-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 2.5rem 0.25rem 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.projects-track::-webkit-scrollbar { display: none; }
+
+/* ===== Item (número + card) ===== */
+.project-item {
+  position: relative;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  overflow: visible;
+}
+
+/* Número estilo Netflix: preenchimento + borda invertida */
+.project-rank {
+  position: absolute;
+  left: 0.2rem;
+  bottom: 0rem;
+  font-family: var(--font-display, "Caprasimo", cursive);
+  font-weight: 900;
+  font-size: 9rem;
+  line-height: 0.75;
+  letter-spacing: -0.05em;
+  color: var(--project-rank-fill);
+  -webkit-text-stroke: 3px var(--project-rank-stroke);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .project-rank {
+    font-size: 12rem;
+    left: 0.8rem;
+    bottom: 0rem;
+    -webkit-text-stroke: 4px var(--project-rank-stroke);
+  }
+}
+
+/* Card sem gota */
+.project-card {
+  position: relative;
+  z-index: 1;
+  width: 260px;
+  background-color: var(--project-card-bg);
+  border: 1px solid var(--project-card-border);
+  border-radius: 1.5rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--project-card-hover-border);
+  box-shadow: var(--project-card-shadow-hover);
+}
+
+/* Conteúdo do card */
+.project-preview {
+  background-color: var(--project-preview-bg);
+  color: var(--project-preview-fg);
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.project-title { color: var(--project-title-fg); }
+.project-desc { color: var(--project-desc-fg); }
+
+.project-tag {
+  background-color: var(--project-tag-bg);
+  color: var(--project-tag-fg);
+}
+
+.project-link { color: var(--project-link-fg); }
+.project-link:hover { color: var(--project-link-hover-fg); }
+
+/* ===== Setas (desktop) ===== */
+.projects-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--project-arrow-border);
+  background-color: var(--project-arrow-bg);
+  color: var(--project-arrow-fg);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+}
+.projects-carousel:hover .projects-arrow { opacity: 1; }
+.projects-arrow:hover {
+  background-color: var(--project-arrow-hover-bg);
+  color: var(--project-arrow-hover-fg);
+}
+.projects-arrow-left { left: -0.75rem; }
+.projects-arrow-right { right: -0.75rem; }
+
+@media (min-width: 768px) {
+  .projects-arrow { display: inline-flex; }
+  .project-card { width: 300px; }
+}
