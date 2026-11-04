@@ -1,125 +1,155 @@
-import React, { useEffect, useState } from "react";
+import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import "../styles/projects.css";
 
-function ProjectCards() {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const username = "mathsantanax";
+// Dados fixos dos projetos (nome, techs, links, imagem, badge key)
+const projectsBase = [
+  {
+    title: "Maevor",
+    descriptionKey: "projects.maevor",
+    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind 4", "React Query", "Zod"],
+    demo: "https://maevor.com.br",
+    code: null,
+    image: "/src/assets/maevor-preview.png",
+    highlight: false,
+  },
+  {
+    title: "AnimaDesk",
+    descriptionKey: "projects.animadesk",
+    tech: ["Vite", "React", "TypeScript", "Tailwind", "Supabase"],
+    demo: "https://anima-desk.vercel.app",
+    code: null,
+    image: "/src/assets/anima-desk-preview.png",
+    highlight: true,
+    badgeKey: "projects.badgeSaas",
+  },
+  {
+    title: "Aurum",
+    descriptionKey: "projects.aurum",
+    tech: ["C#", ".NET", "SQL Server", "Docker", "React", "IA"],
+    demo: null,
+    code: "https://github.com/mathsantanax/Aurum",
+    image: "/src/assets/aurum-preview.png",
+    highlight: true,
+    badgeKey: "projects.badgeFullstack",
+  },
+  {
+    title: "GitHub Cards",
+    descriptionKey: "projects.githubcards",
+    tech: ["TypeScript", "React", "API GitHub"],
+    demo: "https://githubcard-zeta.vercel.app/",
+    code: "https://github.com/mathsantanax/Github-card",
+    image: "/src/assets/github-card.png",
+  },
+];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function ProjectCards() {
+  const { t } = useTranslation();
+  const trackRef = useRef(null);
 
-  useEffect(() => {
-    const fetchRepos = async () => {
-      try {
-        const myReposRes = await fetch(
-          `https://api.github.com/users/${username}/repos`
-        );
-        if (!myReposRes.ok) throw new Error("Erro ao buscar seus repositórios");
-        const myRepos = await myReposRes.json();
-
-        const starredRes = await fetch(
-          `https://api.github.com/users/${username}/starred`
-        );
-        if (!starredRes.ok)
-          throw new Error("Erro ao buscar repositórios estrelados");
-        const starredRepos = await starredRes.json();
-
-        const starredSet = new Set(starredRepos.map((repo) => repo.full_name));
-        const filtered = myRepos.filter((repo) =>
-          starredSet.has(repo.full_name)
-        );
-
-        setRepos(filtered);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRepos();
-  }, []);
-
-  const nextSlide = () => {
-    if (currentIndex < repos.length - 3) {
-      setCurrentIndex(currentIndex + 1);
-    }
+  const scrollBy = (dir) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.querySelector(".project-item");
+    const amount = card ? card.offsetWidth + 16 : 320;
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
   };
-
-  const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  if (loading) return <div>Carregando...</div>;
-  if (error) return <div>Erro: {error}</div>;
 
   return (
-    <div className="relative w-full h-full grid items-center max-w-6xl mx-auto py-12">
-      {/* Botão Esquerda */}
+    <div className="projects-carousel">
       <button
-        onClick={prevSlide}
-        className="absolute z-10 cursor-pointer left-0 top-1/2 -translate-y-1/2 bg-white/10 p-3 rounded-full backdrop-blur-md hover:bg-white/20 transition">
-        <ChevronLeftIcon className="h-6 w-6 text-white" />
+        type="button"
+        aria-label={t("projects.previous")}
+        onClick={() => scrollBy(-1)}
+        className="projects-arrow projects-arrow-left"
+      >
+        <ChevronLeftIcon className="h-5 w-5" />
       </button>
 
-      {/* Cards */}
-      <div className="overflow-hidden">
-        <div
-          className="flex gap-6 transition-transform duration-500"
-          style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
-        >
-          {repos.length > 0 ? (
-            repos.map((repo) => (
-              <div
-                key={repo.id}
-                className="min-w-[calc(100%/3-1.5rem)] h-[200px] [perspective:1000px] items-center">
+      <div ref={trackRef} className="projects-track">
+        {projectsBase.map((p, i) => {
+          const href = p.demo || p.code;
+          const CardWrapper = href ? "a" : "div";
+          const wrapperProps = href
+            ? { href, target: "_blank", rel: "noopener noreferrer" }
+            : {};
 
-                <div className="absolute h-[150px] w-full bg-[#ff6b6e56] rounded-xl "> 
+          return (
+            <div key={p.title} className="project-item">
+              <span className="project-rank" aria-hidden="true">
+                {i + 1}
+              </span>
+
+              <CardWrapper
+                {...wrapperProps}
+                className={`project-card group relative flex flex-col overflow-hidden rounded-2xl ${
+                  p.highlight ? "ring-2 ring-brand" : ""
+                } ${href ? "cursor-pointer" : ""}`}
+              >
+                {p.highlight && p.badgeKey && (
+                  <span className="absolute right-3 top-3 z-10 rounded-full bg-brand px-2 py-1 text-[10px] font-bold text-white">
+                    {t(p.badgeKey)}
+                  </span>
+                )}
+
+                <div className="project-preview flex h-40 items-center justify-center">
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={`${t("projects.preview")} ${p.title}`}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-sm">{t("projects.preview")}</span>
+                  )}
                 </div>
-                <div className="relative h-[90%] w-[90%] transition-transform duration-700 translate-3 translate-y-5 [transform-style:preserve-3d] group hover:[transform:rotateY(180deg)]">
-                  {/* Frente do Card */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 flex items-center justify-center [backface-visibility:hidden] shadow-lg">
-                    
-                    <span className="text-white text-lg font-bold">
-                      {repo.name}
-                    </span>
+
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="project-title text-lg font-semibold">{p.title}</h3>
+                  <p className="project-desc mt-1 flex-1 text-sm">
+                    {t(p.descriptionKey)}
+                  </p>
+
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {p.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="project-tag rounded-full px-2 py-1 text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Verso do Card */}
-                  <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col justify-center items-center text-white [transform:rotateY(180deg)] [backface-visibility:hidden] shadow-lg">
-                    <p className="text-sm mb-4 text-center">
-                      {repo.description || "Sem descrição"}
-                    </p>
-                    <a
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-pink-500 rounded-lg hover:bg-pink-400 transition"
-                    >
-                      Ver no GitHub
-                    </a>
+                  <div className="mt-4 flex gap-4 text-sm font-medium">
+                    {p.demo && (
+                      <span className="project-link link-underline inline-flex items-center gap-1">
+                        {t("projects.demo")}
+                        <span aria-hidden="true">→</span>
+                      </span>
+                    )}
+                    {p.code && (
+                      <span className="project-link link-underline">
+                        {t("projects.code")}
+                      </span>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <div>Nenhum repositório encontrado.</div>
-          )}
-        </div>
+              </CardWrapper>
+            </div>
+          );
+        })}
       </div>
 
-      {/* Botão Direita */}
       <button
-        onClick={nextSlide}
-        className="absolute z-10 cursor-pointer right-0 top-1/2 -translate-y-1/2 bg-white/10 p-3 rounded-full backdrop-blur-md hover:bg-white/20 transition"
+        type="button"
+        aria-label={t("projects.next")}
+        onClick={() => scrollBy(1)}
+        className="projects-arrow projects-arrow-right"
       >
-        <ChevronRightIcon className="h-6 w-6 text-white" />
+        <ChevronRightIcon className="h-5 w-5" />
       </button>
     </div>
   );
 }
-
-export default ProjectCards;
