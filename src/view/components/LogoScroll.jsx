@@ -1,66 +1,22 @@
-import { motion, useScroll, useTransform, easeInOut } from "framer-motion";
-import { useRef } from "react";
-import Parte1 from "../../assets/parte-1.svg";
-import Parte2 from "../../assets/parte-2.svg";
+const techs = ["React", "JavaScript", "Tailwind", "Vite", "Git", "HTML", "CSS", "C#", ".NET", "TypeScript", "Node.js", "AspNet", "PostgreSQL", "SQL Server", "Docker", "REST", "API", "VS Code"];
 
 export default function LogoScroll() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Calcula posições
-  const startX = window.innerWidth / 2 - -50; 
-  const startY = window.innerHeight / 2 - 100;
-  const endX = window.innerWidth - 450;
-  const endY = window.innerHeight - 190;
-
-  const x = useTransform(scrollYProgress, [0, 1], [startX, endX], { ease: easeInOut });
-  const y = useTransform(scrollYProgress, [0, 1], [startY, endY], { ease: easeInOut });
-  const scale = useTransform(scrollYProgress, [0, 1], [2.8, 0.5], { ease: easeInOut });
+  const items = [...techs, ...techs];
 
   return (
-    <div ref={containerRef} className="h-[200vh]">
-      <motion.div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          x,
-          y,
-          scale,
-          zIndex: 50,
-        }}
-        className="flex items-center justify-center pointer-events-none"
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative flex items-center justify-center"
-        >
-          {/* Parte 1 */}
-          <motion.img
-            src={Parte1}
-            alt="Parte 1"
-            className="w-[150px] Logo ml-28 drop-shadow-[15px_0px_8px_#ff6b6e]"
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 7.5 }}
-          />
-
-          {/* Parte 2 */}
-          <motion.img
-            src={Parte2}
-            alt="Parte 2"
-            className="w-[150px]  mt-8.5 drop-shadow-[15px_0px_8px_#ff3b3e] absolute"
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 7.5 }}
-          />
-        </motion.div>
-      </motion.div>
+    <div className="relative flex h-full w-full items-center overflow-hidden">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-surface-light to-transparent dark:from-surface-dark" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface-light to-transparent dark:from-surface-dark" />
+      <div className="flex w-max animate-marquee gap-4">
+        {items.map((t, i) => (
+          <span
+            key={`${t}-${i}`}
+            className="whitespace-nowrap rounded-xl border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 dark:border-neutral-800 dark:text-neutral-300"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
