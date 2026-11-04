@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Available for projects",
+    "subtitle": "Front-end developer with a back-end foundation. I build interfaces with React, TypeScript and Tailwind — and I've worked with C#/.NET on APIs and desktop apps, which gives me end-to-end product vision.",
+    "btnProjects": "View projects",
+    "btnContact": "Get in touch"
+  },
+  "sections": {
+    "projectsTitle": "Projects",
+    "projectsSubtitle": "A selection of what I've built.",
+    "aboutTitle": "About",
+    "aboutText": "I'm Matheus, a front-end developer with a back-end foundation. I enjoy turning problems into simple, fast and accessible interfaces. I work with React, TypeScript and Tailwind, and I've built APIs and desktop apps in C#/.NET — which lets me see the product as a whole, from the database to the screen.",
+    "contactTitle": "Let's work together?",
+    "contactSubtitle": "Choose your preferred channel."
+  },
+  "stats": {
+    "projects": "Public projects",
+    "stacks": "Stacks",
+    "focus": "Focus",
+    "languages": "Languages"
+  },
+  "footer": "© {{year}} Matheus Santana",
+  "card": {
+    "pageTitle": "Matheus Santana — Card",
+    "role": "Front-end developer with a back-end foundation",
+    "bio": "React, TypeScript and Tailwind on the front. C#/.NET on the back. Interfaces that connect people to products.",
+    "featured": "Featured projects",
+    "cta": "View full portfolio →"
+  },
+    "typing": {
+    "first": "Matheus Santana",
+    "second": "Full Stack Dev",
+    "loop1": "React, TS & C#",
+    "loop2": "Complete solutions"
+  },
+  "projects": {
+    "badgeProduction": "IN PRODUCTION",
+    "badgeSaas": "SAAS",
+    "badgeFullstack": "FULL-STACK",
+    "demo": "Demo",
+    "code": "Code",
+    "maevor": "Catalog and quote website for a 3D printing studio. Complete flow: the client describes the idea, receives modeling, and approves on the site.",
+    "animadesk": "Veterinary management SaaS: patients, tutors, medical records, vaccines and team. Multi-tenancy with RLS on Supabase — each clinic only sees its own data.",
+    "aurum": "Web/mobile financial management app with an AI agent. Full-stack in C#/.NET + SQL Server, with per-user ownership, shared Walletspaces and Docker Compose.",
+    "githubcards": "Custom cards with GitHub profile data — avatar, stats, technologies and featured projects."
+  }
+}
