@@ -7,7 +7,6 @@ import ContactCards from "../components/ContactCards";
 import "../styles/hero.css";
 import "../styles/about.css";
 import "../styles/footer.css";
-import profileImg from "../assets/profile.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -37,7 +36,7 @@ export default function Home() {
           {/* FOTO — mobile */}
           <div className="mb-4 h-24 w-24 shrink-0 overflow-hidden rounded-full ring-4 ring-brand/20 md:hidden">
             <img
-              src={profileImg}
+              src="/profile.jpg"
               alt="Foto de Matheus Santana"
               className="h-full w-full object-cover"
               loading="eager"
@@ -81,7 +80,7 @@ export default function Home() {
         >
           <div className="h-60 w-60 shrink-0 overflow-hidden rounded-full ring-4 ring-brand/20">
             <img
-              src="/src/assets/profile.jpg"
+              src="/profile.jpg"
               alt="Foto de Matheus Santana"
               className="h-full w-full object-cover"
               loading="eager"
