@@ -2,6 +2,10 @@ import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import "../styles/projects.css";
+import maevorPreview from "../assets/maevor-preview.png";
+import animaDeskPreview from "../assets/anima-desk-preview.png";
+import aurumPreview from "../assets/aurum-preview.png";
+import githubCardPreview from "../assets/github-card.png";
 
 // Dados fixos dos projetos (nome, techs, links, imagem, badge key)
 const projectsBase = [
@@ -11,7 +15,7 @@ const projectsBase = [
     tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind 4", "React Query", "Zod"],
     demo: "https://maevor.com.br",
     code: null,
-    image: "/src/assets/maevor-preview.png",
+    image: maevorPreview,
     highlight: false,
   },
   {
@@ -20,7 +24,7 @@ const projectsBase = [
     tech: ["Vite", "React", "TypeScript", "Tailwind", "Supabase"],
     demo: "https://anima-desk.vercel.app",
     code: null,
-    image: "/src/assets/anima-desk-preview.png",
+    image: animaDeskPreview,
     highlight: true,
     badgeKey: "projects.badgeSaas",
   },
@@ -30,7 +34,7 @@ const projectsBase = [
     tech: ["C#", ".NET", "SQL Server", "Docker", "React", "IA"],
     demo: null,
     code: "https://github.com/mathsantanax/Aurum",
-    image: "/src/assets/aurum-preview.png",
+    image: aurumPreview,
     highlight: true,
     badgeKey: "projects.badgeFullstack",
   },
@@ -40,7 +44,7 @@ const projectsBase = [
     tech: ["TypeScript", "React", "API GitHub"],
     demo: "https://githubcard-zeta.vercel.app/",
     code: "https://github.com/mathsantanax/Github-card",
-    image: "/src/assets/github-card.png",
+    image: githubCardPreview,
   },
 ];
 
